@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>记忆力训练游戏</title>
+    <title>Memory Test Game</title>
     <style>
         * {
             margin: 0;
@@ -146,37 +146,37 @@
 <body>
     <div class="container">
         <div class="progress-bar">
-            <!-- 进度条会通过 JavaScript 动态生成 -->
+            <!-- Progress bar will be generated dynamically by JavaScript -->
         </div>
         
-        <h1 class="game-title">记忆力训练游戏</h1>
+        <h1 class="game-title">Memory Test Game</h1>
         
         <div id="welcome-screen">
             <div class="game-rules">
-                <h2>游戏规则：</h2>
-                <p>1. 游戏共有20关，每关限时5秒钟</p>
-                <p>2. 从1位数开始到20位数，每关显示一个对应位数的数字</p>
-                <p>3. 在5秒内记住显示的数字</p>
-                <p>4. 时间结束后输入你记住的数字</p>
-                <p>5. 答对显示绿色，答错显示红色</p>
-                <p>6. 第1关5分，第2关10分，以此类推，第20关100分</p>
-                <p>7. 总分1050分，840分以上为优秀</p>
+                <h2>Game Rules:</h2>
+                <p>1. 20 levels in total, 5 seconds per level</p>
+                <p>2. Numbers increase from 1 to 20 digits as you progress</p>
+                <p>3. Memorize the number within 5 seconds</p>
+                <p>4. Enter the number after time's up</p>
+                <p>5. Green for correct, red for incorrect answers</p>
+                <p>6. Level 1: 5 points, Level 2: 10 points, up to Level 20: 100 points</p>
+                <p>7. Total possible score: 1050 points, Excellence: 840+ points</p>
             </div>
-            <button id="start-button">开始游戏</button>
+            <button id="start-button">Start Game</button>
         </div>
 
         <div id="game-screen" style="display: none;">
             <div class="number-display" id="number-display"></div>
             <div class="timer" id="timer"></div>
             <div id="input-area" style="display: none;">
-                <input type="text" id="answer-input" placeholder="请输入你记住的数字">
-                <button id="submit-button">提交答案</button>
+                <input type="text" id="answer-input" placeholder="Enter the number you memorized">
+                <button id="submit-button">Submit Answer</button>
             </div>
         </div>
 
         <div id="final-screen" style="display: none;">
             <div class="result" id="final-score"></div>
-            <button id="restart-button">重新开始</button>
+            <button id="restart-button">Play Again</button>
         </div>
     </div>
 
@@ -238,11 +238,11 @@
 
             startTimer() {
                 let timeLeft = 5;
-                this.timerDisplay.textContent = `剩余时间：${timeLeft}秒`;
+                this.timerDisplay.textContent = `Time Left: ${timeLeft}s`;
                 
                 const timer = setInterval(() => {
                     timeLeft--;
-                    this.timerDisplay.textContent = `剩余时间：${timeLeft}秒`;
+                    this.timerDisplay.textContent = `Time Left: ${timeLeft}s`;
                     
                     if (timeLeft <= 0) {
                         clearInterval(timer);
@@ -253,7 +253,7 @@
 
             showInputArea() {
                 this.numberDisplay.textContent = '';
-                this.timerDisplay.textContent = '请输入你记住的数字';
+                this.timerDisplay.textContent = 'Enter your answer';
                 this.inputArea.style.display = 'block';
                 this.answerInput.value = '';
                 this.answerInput.focus();
@@ -293,12 +293,12 @@
                 this.finalScreen.style.display = 'block';
                 
                 const finalScoreElement = document.getElementById('final-score');
-                let message = `你的总分：${this.score}/1050分\n`;
+                let message = `Your Score: ${this.score}/1050\n`;
                 
                 if (this.score >= 840) {
-                    message += '\n恭喜你，成绩优秀！';
+                    message += '\nExcellent Performance!';
                 } else {
-                    message += '\n继续加油！';
+                    message += '\nKeep practicing!';
                 }
                 
                 finalScoreElement.textContent = message;
@@ -314,7 +314,7 @@
             }
         }
 
-        // 初始化游戏
+        // Initialize the game
         const game = new MemoryGame();
     </script>
 </body>
