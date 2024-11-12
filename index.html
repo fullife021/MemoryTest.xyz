@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Test - Challenge Your Memory Capacity | MemoryTest.xyz</title>
+    <meta name="description" content="Test and improve your memory capacity with our engaging memory challenge game. Train your brain with progressive difficulty levels and track your improvement.">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --white: #ffffff;
+            --accent: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        .game-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .scoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .scoring-table th,
+        .scoring-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .scoring-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .scoring-table tr:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Memory Test Challenge</h1>
+            <p>Push your memory limits with our progressive difficulty memory game</p>
+        </div>
+    </header>
+
+    <section id="game">
+        <div class="container">
+            <h2>Test Your Memory Now</h2>
+            <div class="game-container">
+                <iframe src="/game.html" class="game-frame" title="Memory Test Game"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Memory Test</h2>
+            <p>Memory Test is a challenging cognitive game designed to help you improve your memory capacity through progressive difficulty levels. Whether you're a student looking to enhance your study abilities or a professional aiming to maintain mental sharpness, this game offers an engaging way to train your brain.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Progressive Challenge</h3>
+                    <p>Start with single digits and progress up to 20-digit numbers as you advance through the levels.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Time Pressure</h3>
+                    <p>5 seconds to memorize each number, testing both your short-term memory and focus.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Instant Feedback</h3>
+                    <p>Get immediate feedback on your performance with our color-coded progress tracking system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-play">
+        <div class="container">
+            <h2>How to Play</h2>
+            <h3>Game Rules</h3>
+            <ul>
+                <li>The game consists of 20 levels</li>
+                <li>Each level presents a number for 5 seconds</li>
+                <li>Numbers increase in length with each level (1 digit to 20 digits)</li>
+                <li>Memorize the number within the time limit</li>
+                <li>Input your answer when the number disappears</li>
+                <li>Progress through all levels to test your memory capacity</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="scoring">
+        <div class="container">
+            <h2>Scoring System</h2>
+            <table class="scoring-table">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Points</th>
+                        <th>Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Level 1</td>
+                        <td>5 points</td>
+                        <td>1 digit</td>
+                    </tr>
+                    <tr>
+                        <td>Level 2</td>
+                        <td>10 points</td>
+                        <td>2 digits</td>
+                    </tr>
+                    <tr>
+                        <td>Level 20</td>
+                        <td>100 points</td>
+                        <td>20 digits</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Maximum possible score: 1050 points</p>
+            <p>Score above 840: Excellent performance</p>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <div class="container">
+            <h2>Benefits of Memory Training</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Cognitive Enhancement</h3>
+                    <p>Improve your working memory capacity and information processing speed.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Academic Performance</h3>
+                    <p>Better memory retention for studying and exam preparation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Professional Growth</h3>
+                    <p>Enhanced ability to remember important details in professional settings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MemoryTest.xyz - Challenge Your Memory</p>
+        </div>
+    </footer>
+</body>
+</html> 
